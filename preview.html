@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sarthak Dabhi — Staff Software Engineer (Preview)</title>
+<meta name="description" content="Static preview of the Next.js portfolio. Same design, no build step required." />
+<link rel="icon" href="/public/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bg: { DEFAULT:'#0a0a0b', elevated:'#111114', card:'#16161a' },
+          border: { DEFAULT:'rgba(255,255,255,0.08)', strong:'rgba(255,255,255,0.14)' },
+          fg: { DEFAULT:'#e8e8ed', muted:'#9aa0a6', subtle:'#6b7075' },
+          accent: { DEFAULT:'#7c5cff', glow:'#a48bff' },
+        },
+        fontFamily: {
+          sans: ['Inter','system-ui','sans-serif'],
+          mono: ['JetBrains Mono','ui-monospace','monospace'],
+        },
+        letterSpacing: { tightest: '-0.04em' },
+      },
+    },
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+  body {
+    background:
+      radial-gradient(800px 500px at 80% -10%, rgba(124, 92, 255, 0.10), transparent 60%),
+      radial-gradient(700px 400px at -10% 20%, rgba(56, 189, 248, 0.06), transparent 60%),
+      #0a0a0b;
+    color: #e8e8ed; font-family: Inter, system-ui, sans-serif;
+  }
+  ::selection { background: rgba(124, 92, 255, 0.35); color: #fff; }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 80%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 80%);
+  }
+  .gradient-text {
+    background: linear-gradient(90deg, #fff, #c8c2ff 40%, #7c5cff 60%, #fff);
+    background-size: 200% 100%;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: shimmer 6s linear infinite;
+  }
+  @keyframes shimmer { 0%{background-position:0% 0} 100%{background-position:200% 0} }
+  .card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    transition: border-color .2s, transform .2s, background .2s;
+  }
+  .card:hover { border-color: rgba(255,255,255,0.16); background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015)); }
+  .chip {
+    display:inline-flex; align-items:center; gap:6px;
+    padding:4px 10px; font-size:12px; border-radius:999px;
+    border:1px solid rgba(255,255,255,0.10); background:rgba(255,255,255,0.03); color:#c4c6cc;
+  }
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.10), transparent); }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 999px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.16); }
+  .reveal { opacity:0; transform: translateY(10px); animation: reveal .7s ease-out forwards; }
+  @keyframes reveal { to { opacity:1; transform: translateY(0); } }
+  .nav-link { color:#9aa0a6; transition: color .15s; }
+  .nav-link:hover, .nav-link.active { color:#fff; }
+  .nav.scrolled { backdrop-filter: blur(10px); background: rgba(10,10,11,0.7); border-bottom: 1px solid rgba(255,255,255,0.08); }
+  /* simple icon-stroke */
+  .icn { width:1em; height:1em; stroke:currentColor; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+</style>
+</head>
+<body class="font-sans">
+
+<!-- NAV -->
+<header id="nav" class="nav fixed top-0 left-0 right-0 z-50 transition-all">
+  <div class="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
+    <a href="#top" class="font-mono text-sm tracking-tight text-fg hover:text-white"><span class="text-accent">/</span>sarthak</a>
+    <nav class="hidden md:flex items-center gap-7 text-sm">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    <a href="mailto:dabhi.sarthak@gmail.com" class="hidden sm:inline-flex items-center text-sm font-medium px-3.5 py-1.5 rounded-full border border-border-strong hover:border-accent hover:text-white text-fg transition">Get in touch</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section id="top" class="relative pt-36 pb-24 overflow-hidden">
+    <div class="absolute inset-0 grid-bg pointer-events-none" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-6xl px-6">
+      <div class="flex items-center gap-2 reveal" style="animation-delay:.05s">
+        <span class="relative flex h-2 w-2">
+          <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60 animate-ping"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+        </span>
+        <span class="text-xs text-fg-muted font-mono">Available for staff/principal roles &amp; advising</span>
+      </div>
+      <h1 class="mt-6 text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tightest leading-[1.02] reveal" style="animation-delay:.15s">
+        <span class="gradient-text">Sarthak Dabhi.</span>
+      </h1>
+      <p class="mt-5 max-w-2xl text-lg sm:text-xl text-fg-muted leading-relaxed reveal" style="animation-delay:.25s">
+        Staff Software Engineer at <span class="text-white font-medium">Tebra</span>. Architecting systems, leading teams, shipping product.
+      </p>
+      <div class="mt-7 flex flex-wrap items-center gap-3 reveal" style="animation-delay:.35s">
+        <a href="#projects" class="group inline-flex items-center gap-1.5 rounded-full bg-white text-black px-4 py-2 text-sm font-medium hover:bg-fg transition">
+          See my work
+          <svg viewBox="0 0 24 24" class="icn"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+        <a href="#contact" class="inline-flex items-center gap-1.5 rounded-full border border-border-strong px-4 py-2 text-sm font-medium hover:border-accent hover:text-white text-fg transition">Contact</a>
+        <div class="ml-1 flex items-center gap-1">
+          <a href="https://github.com/sarthakdabhi" target="_blank" rel="noreferrer" aria-label="GitHub" class="p-2 rounded-full text-fg-muted hover:text-white hover:bg-white/5 transition">
+            <svg viewBox="0 0 24 24" class="icn w-5 h-5"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.82.1-.65.35-1.08.64-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-2 1.03-2.7-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.5 9.5 0 0 1 12 6.84c.85 0 1.7.11 2.5.33 1.9-1.3 2.74-1.03 2.74-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.7 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.86v2.75c0 .26.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/sarthakdabhi" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="p-2 rounded-full text-fg-muted hover:text-white hover:bg-white/5 transition">
+            <svg viewBox="0 0 24 24" class="icn w-5 h-5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v8M8 7v.01M12 18v-5a2 2 0 0 1 4 0v5M12 13v5"/></svg>
+          </a>
+          <a href="mailto:dabhi.sarthak@gmail.com" aria-label="Email" class="p-2 rounded-full text-fg-muted hover:text-white hover:bg-white/5 transition">
+            <svg viewBox="0 0 24 24" class="icn w-5 h-5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="mt-10 flex items-center gap-2 text-sm text-fg-subtle font-mono reveal" style="animation-delay:.45s">
+        <svg viewBox="0 0 24 24" class="icn w-4 h-4"><path d="M12 22s-7-7.58-7-13a7 7 0 0 1 14 0c0 5.42-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Los Angeles, California
+      </div>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-6xl px-6"><div class="divider"></div></div>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="mb-12">
+        <div class="flex items-center gap-3 text-sm font-mono text-fg-subtle">
+          <span class="text-accent">01</span><span class="h-px w-10 bg-border-strong"></span><span class="uppercase tracking-widest">about</span>
+        </div>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight">About</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="md:col-span-2 space-y-5 text-fg leading-relaxed text-lg">
+          <p>Staff engineer with 12+ years building product end‑to‑end — from monolith‑to‑microservice migrations on AWS to designing content systems and widgets used in production. I build teams as carefully as I build software, and I keep the bias toward shipping.</p>
+          <p class="text-fg-muted text-base">I'm an engineer who likes the whole stack — architecture decisions, the messy middle of implementation, and the systems that keep it all running. At Tebra I architected a Practice Content Management System and a Widgets platform; at RxPrep I migrated a legacy monolith to microservices on AWS and cut ~$100k/year in cloud + tooling cost by bringing DevOps in‑house. Earlier I led teams in India, taught Data Structures at CSU‑San Bernardino, and shipped educational games used at national scale in India.</p>
+        </div>
+        <aside class="space-y-5">
+          <div class="card p-5">
+            <div class="text-xs font-mono text-fg-subtle uppercase tracking-widest">Now</div>
+            <div class="mt-2 text-fg">Staff Software Engineer at <span class="text-white font-medium">Tebra</span></div>
+            <div class="mt-1 text-sm text-fg-muted">Building the Practice Content + Widgets platform.</div>
+          </div>
+          <div class="card p-5">
+            <div class="text-xs font-mono text-fg-subtle uppercase tracking-widest">Education</div>
+            <ul class="mt-2 space-y-3">
+              <li><div class="text-fg">M.S., Computer Science</div><div class="text-sm text-fg-muted">California State University, San Bernardino</div><div class="text-xs font-mono text-fg-subtle mt-0.5">2017 — 2019</div></li>
+              <li><div class="text-fg">B.Tech., Computer Science</div><div class="text-sm text-fg-muted">Dharmsinh Desai University</div><div class="text-xs font-mono text-fg-subtle mt-0.5">2009 — 2013</div></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+      <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+        <div class="bg-bg p-6"><div class="text-3xl font-semibold tracking-tight">12+</div><div class="mt-1 text-xs text-fg-muted leading-snug">Years building software</div></div>
+        <div class="bg-bg p-6"><div class="text-3xl font-semibold tracking-tight">$100K</div><div class="mt-1 text-xs text-fg-muted leading-snug">Annual cloud spend cut at RxPrep</div></div>
+        <div class="bg-bg p-6"><div class="text-3xl font-semibold tracking-tight">2</div><div class="mt-1 text-xs text-fg-muted leading-snug">Platforms architected at Tebra</div></div>
+        <div class="bg-bg p-6"><div class="text-3xl font-semibold tracking-tight">13</div><div class="mt-1 text-xs text-fg-muted leading-snug">Open‑source repos on GitHub</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-6xl px-6"><div class="divider"></div></div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="mb-12">
+        <div class="flex items-center gap-3 text-sm font-mono text-fg-subtle"><span class="text-accent">02</span><span class="h-px w-10 bg-border-strong"></span><span class="uppercase tracking-widest">experience</span></div>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight">Experience</h2>
+        <p class="mt-3 max-w-2xl text-fg-muted leading-relaxed">Twelve years of shipping. From freelance in Ahmedabad to staff engineering in California — same craft, larger systems.</p>
+      </div>
+      <ol id="exp-list" class="relative border-l border-border ml-2 space-y-12"></ol>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-6xl px-6"><div class="divider"></div></div>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="mb-12">
+        <div class="flex items-center gap-3 text-sm font-mono text-fg-subtle"><span class="text-accent">03</span><span class="h-px w-10 bg-border-strong"></span><span class="uppercase tracking-widest">selected projects</span></div>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight">Selected projects</h2>
+        <p class="mt-3 max-w-2xl text-fg-muted leading-relaxed">Open source experiments, frameworks, and educational games. The full list lives on GitHub.</p>
+      </div>
+      <div id="proj-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      <div class="mt-8">
+        <a href="https://github.com/sarthakdabhi?tab=repositories" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 text-sm font-medium text-fg hover:text-white transition">
+          View all repositories on GitHub
+          <svg viewBox="0 0 24 24" class="icn w-4 h-4"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-6xl px-6"><div class="divider"></div></div>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="mb-12">
+        <div class="flex items-center gap-3 text-sm font-mono text-fg-subtle"><span class="text-accent">04</span><span class="h-px w-10 bg-border-strong"></span><span class="uppercase tracking-widest">skills</span></div>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight">Skills</h2>
+        <p class="mt-3 max-w-2xl text-fg-muted leading-relaxed">The toolkit I reach for, and the practice patterns I rely on.</p>
+      </div>
+      <div id="skills-grid" class="grid md:grid-cols-2 gap-4"></div>
+      <div class="mt-10 grid md:grid-cols-2 gap-4">
+        <div class="card p-5">
+          <div class="text-xs font-mono uppercase tracking-widest text-fg-subtle">Certifications</div>
+          <ul id="certs" class="mt-3 grid gap-1.5 text-sm text-fg-muted"></ul>
+        </div>
+        <div class="card p-5">
+          <div class="text-xs font-mono uppercase tracking-widest text-fg-subtle">Languages</div>
+          <ul id="langs" class="mt-3 grid gap-1.5 text-sm text-fg-muted"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-6xl px-6"><div class="divider"></div></div>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="mb-12">
+        <div class="flex items-center gap-3 text-sm font-mono text-fg-subtle"><span class="text-accent">05</span><span class="h-px w-10 bg-border-strong"></span><span class="uppercase tracking-widest">contact</span></div>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight">Contact</h2>
+        <p class="mt-3 max-w-2xl text-fg-muted leading-relaxed">Building something interesting, hiring for a staff role, or just want to talk shop? My inbox is open.</p>
+      </div>
+      <div class="grid lg:grid-cols-5 gap-6">
+        <div class="lg:col-span-3 card p-8 relative overflow-hidden">
+          <div class="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-accent/20 blur-3xl pointer-events-none" aria-hidden="true"></div>
+          <div class="relative">
+            <div class="text-xs font-mono uppercase tracking-widest text-fg-subtle">Best way to reach me</div>
+            <a href="mailto:dabhi.sarthak@gmail.com" class="mt-3 inline-flex items-baseline gap-2 text-2xl sm:text-3xl font-semibold tracking-tight hover:text-accent transition">
+              dabhi.sarthak@gmail.com
+              <svg viewBox="0 0 24 24" class="icn w-5 h-5 opacity-70"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+            <p class="mt-4 text-fg-muted max-w-md">I usually reply within a day or two. Mention what you're working on and what you're hoping for.</p>
+            <div class="mt-6">
+              <a href="mailto:dabhi.sarthak@gmail.com?subject=Hi%20Sarthak" class="inline-flex items-center gap-1.5 rounded-full bg-white text-black px-4 py-2 text-sm font-medium hover:bg-fg transition">
+                Say hello
+                <svg viewBox="0 0 24 24" class="icn w-4 h-4"><path d="M7 17L17 7M9 7h8v8"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div id="channels" class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-border mt-12">
+  <div class="mx-auto max-w-6xl px-6 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+    <div class="text-xs text-fg-subtle font-mono">© 2026 Sarthak Dabhi. Built with Next.js &amp; Tailwind.</div>
+    <div class="text-xs text-fg-subtle font-mono">Designed and shipped in California.</div>
+  </div>
+</footer>
+
+<script>
+  // ---- Data ----
+  const experience = [
+    { company:"Tebra", period:"May 2021 — Present", url:"https://www.tebra.com",
+      roles:[
+        { title:"Staff Software Engineer", start:"Jul 2025", end:"Present", location:"Los Angeles, CA",
+          bullets:["Setting technical direction for the Practice Content & Widgets platform.","Driving architecture reviews, mentorship, and cross‑team initiatives."]},
+        { title:"Senior Software Engineer", start:"May 2021", end:"Jul 2025", location:"Santa Monica, CA",
+          bullets:["Architected and shipped two major systems: a Practice Content Management System and a Widgets platform for customer websites.","Designed content version history, preview environments, and S3/cache‑backed read paths for scalability.","Built a tree‑structured form engine that powers many content types from a single component (Google Forms‑style).","Mentored engineers on design technique, coding standards, and review craft."]},
+      ]},
+    { company:"RxPrep", period:"Jun 2018 — May 2021", url:"https://www.rxprep.com",
+      roles:[
+        { title:"Software Development Lead & Architect", start:"Sep 2019", end:"May 2021", location:"El Segundo, CA",
+          bullets:["Defined the engineering org's tech, workflow, and coding standards from scratch.","Owned all of AWS, GitHub, and engineering accounts; brought DevOps in‑house and cut ~$100k/yr in third‑party spend.","Built and led a cohesive software team end‑to‑end across product delivery.","Established release, review, and quality processes for scalable shipping."]},
+        { title:"Senior Software Engineer", start:"Apr 2019", end:"Sep 2019", location:"El Segundo, CA",
+          bullets:["Led the migration from a monolith to microservices on AWS.","Authored Terraform modules for test/staging/prod environments.","Built web apps in Laravel + React; designed stateless APIs for web and mobile."]},
+        { title:"Software Engineer Intern", start:"Jun 2018", end:"Mar 2019", location:"El Segundo, CA",
+          bullets:["Built and supported AWS infrastructure with automation/orchestration.","Shipped features in Laravel + React, focused on API performance."]},
+      ]},
+    { company:"California State University, San Bernardino", period:"Nov 2017 — Jun 2018",
+      roles:[{ title:"Teaching Assistant — Data Structures, Algorithms & C++ OOP", start:"Nov 2017", end:"Jun 2018", location:"San Bernardino, CA",
+        bullets:["TA for Dr. Kerstin Voigt and Dr. David Turner.","Ran labs and graded for 100+ undergraduate CS students.","Wrote career‑oriented lab assignments and held weekly office hours."]}]},
+    { company:"Sooryen Technologies", period:"Oct 2016 — Jun 2017",
+      roles:[{ title:"Senior Software Engineer", start:"Oct 2016", end:"Jun 2017", location:"Ahmedabad, India",
+        bullets:["Delivered fintech solutions: SaveDay, Cetera, Kapitall, FolioDynamix.","Built web for 1‑800 Flowers, SmileMakers, Bloomreach.","Led a 5‑engineer team; ran daily scrum with US clients.","Introduced Angular, React, and ExtJS to the practice."]}]},
+    { company:"Apps Wwhere (IIM‑A CIIE)", period:"Apr 2015 — Jul 2016",
+      roles:[{ title:"Product Manager", start:"Apr 2015", end:"Jul 2016", location:"Ahmedabad, India",
+        bullets:["Co‑built a location‑based address‑solutions startup incubated at IIM‑Ahmedabad's CIIE.","Led a 10‑person product team (Android, web, design, marketing).","Implemented Elasticsearch for search/analytics and CRON‑driven daily reporting.","Company was acquired by RedMart (Singapore)."]}]},
+    { company:"Educational Initiatives", period:"Jun 2014 — Apr 2015",
+      roles:[{ title:"Game Developer", start:"Jun 2014", end:"Apr 2015", location:"Ahmedabad, India",
+        bullets:["Built two large data‑heavy projects for national student assessments.","Shipped hundreds of adaptive learning games in JS + HTML5 Canvas.","Generated detailed assessment reports with R."]}]},
+    { company:"Self Employed", period:"May 2013 — Jun 2014",
+      roles:[{ title:"Full Stack Developer", start:"May 2013", end:"Jun 2014", location:"Ahmedabad, India",
+        bullets:["Freelanced for clients across India, Singapore, and the US.","Built CRM/HRM/Payroll/Invoicing systems for Singapore clients.","Coordinated a distributed network of 15 developers.","Taught programming online to international students."]}]},
+  ];
+
+  const projects = [
+    { name:"angular-essentials", desc:"A ready‑to‑go Angular application scaffold. Modules and architecture to bootstrap any project, small or large.", url:"https://github.com/sarthakdabhi/angular-essentials", lang:"JavaScript", tags:["Angular","Architecture","Starter"] },
+    { name:"infopopup", desc:"A drop‑in JavaScript plugin — an open alternative to Google Maps' InfoWindow.", url:"https://github.com/sarthakdabhi/infopopup", lang:"HTML", tags:["JavaScript","Plugin","UI"] },
+    { name:"ng-laravel", desc:"AngularJS app integrated with the Laravel PHP framework — a full‑stack reference.", url:"https://github.com/sarthakdabhi/ng-laravel", lang:"PHP", tags:["Angular","Laravel","Full‑stack"] },
+    { name:"balloons-popper", desc:"An educational game for children that teaches numbers through play. TypeScript + Canvas.", url:"https://github.com/sarthakdabhi/balloons-popper", lang:"TypeScript", tags:["Game","Canvas","EdTech"] },
+    { name:"drawingboard", desc:"An open drawing board for everyone — shapes, text, memes. Live demo included.", url:"https://github.com/sarthakdabhi/drawingboard", live:"https://sarthakdabhi.github.io/drawingboard/", lang:"HTML", tags:["Canvas","Tool","Open Source"] },
+    { name:"addition-1", desc:"A learn‑through‑play game teaching kids how to add single‑digit numbers.", url:"https://github.com/sarthakdabhi/addition-1", lang:"JavaScript", tags:["Game","EdTech","HTML5"] },
+  ];
+
+  const skills = [
+    { label:"Languages", items:["JavaScript","TypeScript","PHP","Python","C++","SQL","R"] },
+    { label:"Frontend", items:["React","Next.js","Angular","React Native","HTML5 Canvas","Tailwind CSS"] },
+    { label:"Backend", items:["Node.js","Laravel","Yii","REST APIs","Microservices","Elasticsearch"] },
+    { label:"Cloud & Infra", items:["AWS","Terraform","Docker","CI/CD","GitHub Actions","S3 / CloudFront"] },
+    { label:"Practice", items:["System Design","Team Leadership","Mentorship","DevOps","Code Review","Product Thinking"] },
+  ];
+  const certs = ["SQL Essential Training","React.js Essential Training","Blockchain: Beyond the Basics","HTML5 Game Development with Phaser","React Native Essential Training"];
+  const langs = [{name:"English",level:"Professional Working"},{name:"Hindi",level:"Full Professional"},{name:"Gujarati",level:"Full Professional"}];
+  const langDot = { JavaScript:"bg-yellow-400", TypeScript:"bg-sky-400", PHP:"bg-indigo-400", HTML:"bg-orange-400", CSS:"bg-blue-400" };
+
+  // ---- Render: Experience ----
+  const expList = document.getElementById('exp-list');
+  experience.forEach(job => {
+    const rolesHTML = job.roles.map(r => `
+      <div class="card p-5">
+        <div class="flex flex-wrap items-baseline justify-between gap-2">
+          <div class="text-fg font-medium">${r.title}</div>
+          <div class="font-mono text-xs text-fg-subtle">${r.start} — ${r.end}${r.location ? ` · ${r.location}` : ''}</div>
+        </div>
+        <ul class="mt-3 space-y-2 text-sm text-fg-muted leading-relaxed">
+          ${r.bullets.map(b => `<li class="flex gap-2.5"><span class="mt-2 h-1 w-1 flex-none rounded-full bg-fg-subtle"></span><span>${b}</span></li>`).join('')}
+        </ul>
+      </div>`).join('');
+    const companyLink = job.url
+      ? `<a href="${job.url}" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 hover:text-accent transition">${job.company}<svg viewBox="0 0 24 24" class="icn w-4 h-4 opacity-60"><path d="M7 17L17 7M9 7h8v8"/></svg></a>`
+      : job.company;
+    expList.insertAdjacentHTML('beforeend', `
+      <li class="pl-8 relative">
+        <span class="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full bg-accent ring-4 ring-bg"></span>
+        <div class="flex flex-wrap items-baseline justify-between gap-2">
+          <h3 class="text-xl font-semibold tracking-tight text-white">${companyLink}</h3>
+          <span class="font-mono text-xs text-fg-subtle">${job.period}</span>
+        </div>
+        <div class="mt-5 space-y-6">${rolesHTML}</div>
+      </li>
+    `);
+  });
+
+  // ---- Render: Projects ----
+  const grid = document.getElementById('proj-grid');
+  projects.forEach(p => {
+    const tagsHTML = p.tags.map(t => `<span class="chip">${t}</span>`).join('');
+    const dotCls = langDot[p.lang] || "bg-fg-subtle";
+    const liveHTML = p.live ? `
+      <a href="${p.live}" target="_blank" rel="noreferrer" class="relative z-10 inline-flex items-center gap-1 hover:text-white transition">
+        <svg viewBox="0 0 24 24" class="icn w-3.5 h-3.5"><path d="M10 14L21 3M21 3h-7M21 3v7"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg>
+        live demo
+      </a>` : '';
+    grid.insertAdjacentHTML('beforeend', `
+      <div class="card p-5 flex flex-col relative group">
+        <div class="flex items-start justify-between">
+          <div class="flex items-center gap-2 text-white font-medium tracking-tight">
+            <svg viewBox="0 0 24 24" class="icn w-4 h-4 text-fg-muted"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.82.1-.65.35-1.08.64-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-2 1.03-2.7-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.5 9.5 0 0 1 12 6.84c.85 0 1.7.11 2.5.33 1.9-1.3 2.74-1.03 2.74-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.7 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.86v2.75c0 .26.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+            ${p.name}
+          </div>
+          <svg viewBox="0 0 24 24" class="icn w-4 h-4 text-fg-subtle transition group-hover:text-white"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </div>
+        <p class="mt-3 text-sm text-fg-muted leading-relaxed flex-1">${p.desc}</p>
+        <div class="mt-4 flex flex-wrap gap-1.5">${tagsHTML}</div>
+        <div class="mt-4 flex items-center justify-between text-xs text-fg-subtle font-mono">
+          <span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full ${dotCls}"></span>${p.lang}</span>
+          ${liveHTML}
+        </div>
+        <a href="${p.url}" target="_blank" rel="noreferrer" aria-label="Open ${p.name} on GitHub" class="absolute inset-0 rounded-2xl"></a>
+      </div>
+    `);
+  });
+
+  // ---- Render: Skills ----
+  const sg = document.getElementById('skills-grid');
+  skills.forEach(g => {
+    sg.insertAdjacentHTML('beforeend', `
+      <div class="card p-5">
+        <div class="text-xs font-mono uppercase tracking-widest text-fg-subtle">${g.label}</div>
+        <div class="mt-3 flex flex-wrap gap-2">${g.items.map(i => `<span class="chip">${i}</span>`).join('')}</div>
+      </div>`);
+  });
+  const certsEl = document.getElementById('certs');
+  certs.forEach(c => certsEl.insertAdjacentHTML('beforeend', `<li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-accent"></span>${c}</li>`));
+  const langsEl = document.getElementById('langs');
+  langs.forEach(l => langsEl.insertAdjacentHTML('beforeend', `<li class="flex items-center justify-between"><span class="text-fg">${l.name}</span><span class="text-fg-subtle text-xs font-mono">${l.level}</span></li>`));
+
+  // ---- Channels (contact) ----
+  const channels = [
+    { label:"Email", value:"dabhi.sarthak@gmail.com", href:"mailto:dabhi.sarthak@gmail.com",
+      svg:`<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>` },
+    { label:"LinkedIn", value:"/in/sarthakdabhi", href:"https://www.linkedin.com/in/sarthakdabhi",
+      svg:`<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v8M8 7v.01M12 18v-5a2 2 0 0 1 4 0v5M12 13v5"/>` },
+    { label:"GitHub", value:"@sarthakdabhi", href:"https://github.com/sarthakdabhi",
+      svg:`<path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.82.1-.65.35-1.08.64-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-2 1.03-2.7-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.5 9.5 0 0 1 12 6.84c.85 0 1.7.11 2.5.33 1.9-1.3 2.74-1.03 2.74-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.7 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.86v2.75c0 .26.18.58.69.48A10 10 0 0 0 12 2z"/>` },
+    { label:"Twitter / X", value:"@sarthakdabhi", href:"https://twitter.com/sarthakdabhi",
+      svg:`<path d="M22 5.8c-.7.3-1.5.5-2.4.6.9-.5 1.5-1.3 1.8-2.3-.8.5-1.7.9-2.7 1.1A4.2 4.2 0 0 0 11.6 9c0 .3 0 .7.1 1A12 12 0 0 1 3 4.7a4.2 4.2 0 0 0 1.3 5.6c-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.7 3.3 4.1-.6.2-1.3.2-1.9.1.5 1.7 2.1 2.9 4 2.9A8.4 8.4 0 0 1 2 18.6 12 12 0 0 0 8.3 20c7.7 0 12-6.4 12-12v-.5c.8-.6 1.5-1.3 2-2.2z"/>` },
+  ];
+  const chEl = document.getElementById('channels');
+  channels.forEach(c => {
+    const target = c.href.startsWith('mailto:') ? '' : 'target="_blank"';
+    chEl.insertAdjacentHTML('beforeend', `
+      <a href="${c.href}" ${target} rel="noreferrer" class="card p-4 flex items-center gap-3 group">
+        <svg viewBox="0 0 24 24" class="icn w-5 h-5 text-fg-muted group-hover:text-white transition">${c.svg}</svg>
+        <div class="flex-1 min-w-0">
+          <div class="text-xs text-fg-subtle font-mono uppercase tracking-widest">${c.label}</div>
+          <div class="truncate text-sm text-fg">${c.value}</div>
+        </div>
+        <svg viewBox="0 0 24 24" class="icn w-4 h-4 text-fg-subtle group-hover:text-white transition"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>`);
+  });
+
+  // ---- Nav scroll + active section ----
+  const navEl = document.getElementById('nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = ['about','experience','projects','skills','contact'];
+  const onScroll = () => {
+    if (window.scrollY > 8) navEl.classList.add('scrolled'); else navEl.classList.remove('scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === `#${id}`));
+      }
+    });
+  }, { rootMargin: "-40% 0px -55% 0px", threshold: 0 });
+  sections.forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
+</script>
+</body>
+</html>
