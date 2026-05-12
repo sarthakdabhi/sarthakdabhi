@@ -1,86 +1,86 @@
-# Sarthak Dabhi — Portfolio
+<h1 align="center">Hi, I'm Sarthak</h1>
 
-Personal portfolio for **Sarthak Dabhi**, Staff Software Engineer at Tebra.
-Built with Next.js 14 (App Router), TypeScript, and Tailwind CSS.
+<p align="center">
+  <b>Staff Software Engineer</b> at
+  <a href="https://www.tebra.com">Tebra</a>
+  &nbsp;·&nbsp; Los Angeles, California
+</p>
 
-## Quick preview (no install required)
+<p align="center">
+  <a href="https://www.sarthakdabhi.com">
+    <img alt="Website" src="https://img.shields.io/badge/sarthakdabhi.com-0a0a0b?style=flat-square&logo=safari&logoColor=white" />
+  </a>
+  <a href="https://www.linkedin.com/in/sarthakdabhi">
+    <img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0a66c2?style=flat-square&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="https://twitter.com/sarthakdabhi">
+    <img alt="X / Twitter" src="https://img.shields.io/badge/@sarthakdabhi-1d9bf0?style=flat-square&logo=x&logoColor=white" />
+  </a>
+  <a href="mailto:dabhi.sarthak@gmail.com">
+    <img alt="Email" src="https://img.shields.io/badge/Email-d14836?style=flat-square&logo=gmail&logoColor=white" />
+  </a>
+</p>
 
-Open `preview.html` in your browser — it's a self‑contained static version
-with the exact same design, using Tailwind via CDN. Great for sharing or
-for a quick look before you run the real build.
+---
 
-## Run the Next.js site locally
+I architect systems, lead teams, and ship product. Twelve years across the stack — from monolith‑to‑microservice migrations on AWS to building content platforms used in production.
 
-```bash
-npm install
-npm run dev          # http://localhost:3000
-```
+- Building the **Practice Content & Widgets** platform at Tebra
+- Previously **Software Development Lead & Architect** at RxPrep — migrated a legacy monolith to microservices on AWS and cut **~$100k/yr** in cloud + tooling cost
+- Taught **Data Structures, Algorithms & C++ OOP** as a TA at CSU‑San Bernardino
+- M.S. Computer Science · California State University, San Bernardino
+- B.Tech Computer Science · Dharmsinh Desai University
+- I write at [sarthakdabhi.com](https://www.sarthakdabhi.com)
 
-Other scripts:
+### Stack
 
-```bash
-npm run build        # production build
-npm run start        # serve the production build
-npm run lint
-npm run type-check
-```
+<p>
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178c6?style=flat-square&logo=typescript&logoColor=white" />
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-f7df1e?style=flat-square&logo=javascript&logoColor=black" />
+  <img alt="React" src="https://img.shields.io/badge/React-20232a?style=flat-square&logo=react&logoColor=61dafb" />
+  <img alt="Next.js" src="https://img.shields.io/badge/Next.js-000?style=flat-square&logo=next.js&logoColor=white" />
+  <img alt="Node.js" src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white" />
+  <img alt="PHP" src="https://img.shields.io/badge/PHP-777bb4?style=flat-square&logo=php&logoColor=white" />
+  <img alt="Laravel" src="https://img.shields.io/badge/Laravel-ff2d20?style=flat-square&logo=laravel&logoColor=white" />
+  <img alt="Python" src="https://img.shields.io/badge/Python-3776ab?style=flat-square&logo=python&logoColor=white" />
+</p>
+<p>
+  <img alt="AWS" src="https://img.shields.io/badge/AWS-232f3e?style=flat-square&logo=amazon-aws&logoColor=ff9900" />
+  <img alt="Terraform" src="https://img.shields.io/badge/Terraform-7b42bc?style=flat-square&logo=terraform&logoColor=white" />
+  <img alt="Docker" src="https://img.shields.io/badge/Docker-2496ed?style=flat-square&logo=docker&logoColor=white" />
+  <img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub%20Actions-2088ff?style=flat-square&logo=githubactions&logoColor=white" />
+  <img alt="Elasticsearch" src="https://img.shields.io/badge/Elasticsearch-005571?style=flat-square&logo=elasticsearch&logoColor=white" />
+  <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white" />
+  <img alt="MySQL" src="https://img.shields.io/badge/MySQL-4479a1?style=flat-square&logo=mysql&logoColor=white" />
+  <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind-06b6d4?style=flat-square&logo=tailwindcss&logoColor=white" />
+</p>
 
-## Project structure
+### Selected open source
 
-```
-app/
-  layout.tsx         # Root layout, fonts, metadata
-  page.tsx           # Single‑page composition
-  globals.css        # Tailwind + custom styles
-components/
-  Nav.tsx            # Sticky nav with active section
-  Hero.tsx           # Name, tagline, CTAs
-  About.tsx          # Bio + stats
-  Experience.tsx     # Timeline of roles
-  Projects.tsx       # GitHub project cards
-  Skills.tsx         # Grouped skill chips, certs, languages
-  Contact.tsx        # Email + social channels
-  Footer.tsx
-  SectionHeading.tsx # Numbered "01 — About" style heading
-data/
-  profile.ts         # Name, bio, links
-  experience.ts      # Jobs + education
-  projects.ts        # Featured GitHub repos
-  skills.ts          # Skill groups, certifications, languages
-public/
-  favicon.svg
-tailwind.config.ts
-next.config.js
-tsconfig.json
-preview.html         # Static preview, no build required
-```
+| Project | What it is |
+| --- | --- |
+| **[angular-essentials](https://github.com/sarthakdabhi/angular-essentials)** | Ready‑to‑go Angular scaffold with batteries included |
+| **[infopopup](https://github.com/sarthakdabhi/infopopup)** | A drop‑in JS plugin — an open alternative to Google Maps' InfoWindow |
+| **[ng-laravel](https://github.com/sarthakdabhi/ng-laravel)** | AngularJS + Laravel — a full‑stack reference build |
+| **[drawingboard](https://github.com/sarthakdabhi/drawingboard)** | Open drawing board — shapes, text, memes · [live demo](https://sarthakdabhi.github.io/drawingboard/) |
+| **[balloons-popper](https://github.com/sarthakdabhi/balloons-popper)** | Educational game teaching numbers · TypeScript + Canvas |
+| **[addition-1](https://github.com/sarthakdabhi/addition-1)** | Learn‑through‑play game for single‑digit addition |
 
-## Editing content
+### GitHub
 
-All content lives in `data/`. Update the typed objects there and the site
-re‑renders automatically. No CMS, no API calls — it's intentionally simple.
+<p>
+  <a href="https://github.com/sarthakdabhi">
+    <img height="170" alt="Sarthak's GitHub stats"
+      src="https://github-readme-stats.vercel.app/api?username=sarthakdabhi&show_icons=true&hide_border=true&include_all_commits=true&count_private=true&title_color=7c5cff&icon_color=7c5cff&text_color=9aa0a6&bg_color=0a0a0b" />
+  </a>
+  <a href="https://github.com/sarthakdabhi">
+    <img height="170" alt="Top languages"
+      src="https://github-readme-stats.vercel.app/api/top-langs/?username=sarthakdabhi&layout=compact&hide_border=true&title_color=7c5cff&text_color=9aa0a6&bg_color=0a0a0b" />
+  </a>
+</p>
 
-To change accent color, edit `tailwind.config.ts` (`accent.DEFAULT`) and
-`app/globals.css` (gradients).
+---
 
-## Deploying
-
-**Vercel (recommended).** Push this repo to GitHub and import it at
-<https://vercel.com/new>. Next.js works out of the box with zero config.
-
-**Netlify.** Connect the repo and use the Next.js runtime plugin (auto‑detected).
-
-**Static export.** Add `output: 'export'` to `next.config.js` and run
-`npm run build` for a fully static `out/` directory you can drop on any
-CDN / GitHub Pages.
-
-## Connect your domain
-
-In Vercel: *Project → Settings → Domains → Add* `sarthakdabhi.com`.
-Update DNS at your registrar to point to Vercel's nameservers (or set the
-recommended `A`/`CNAME` records Vercel shows you). Same flow works for
-Netlify and Cloudflare Pages.
-
-## License
-
-Code: MIT. Content (bio, work history): © Sarthak Dabhi.
+<p align="center">
+  <sub>Building something interesting, hiring for a staff role, or just want to talk shop? <a href="mailto:dabhi.sarthak@gmail.com">My inbox is open.</a></sub>
+</p>
