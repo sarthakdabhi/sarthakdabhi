@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -38,6 +39,11 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
   },
+  verification: {
+    other: {
+      "plug-widgets-site-verification": "5b650345-06de-49c2-b8e4-ff9525330175",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -51,6 +57,11 @@ export default function RootLayout({
         {children}
         <Analytics />
         <SpeedInsights />
+        <Script
+          src="https://cdn.plugwidgets.com/widget.js"
+          data-token="b8b422e6-13b1-474f-a61b-dfcf4104eeba"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
