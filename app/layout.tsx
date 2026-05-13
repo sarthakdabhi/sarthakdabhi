@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   verification: {
     other: {
-      "plug-widgets-site-verification": "5b650345-06de-49c2-b8e4-ff9525330175",
+      "plug-widgets-site-verification": "b305a57e-df81-406e-80f8-f16f9e2f83fa",
     },
   },
 };
@@ -59,8 +59,8 @@ export default function RootLayout({
         <SpeedInsights />
         <Script
           src="https://cdn.plugwidgets.com/widget.js"
-          data-token="b8b422e6-13b1-474f-a61b-dfcf4104eeba"
-          strategy="afterInteractive"
+          data-token="90b2902b-9829-4147-bbc9-903a57613de0"
+          async
         />
       </body>
     </html>
