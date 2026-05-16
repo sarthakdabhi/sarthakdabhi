@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -57,11 +56,6 @@ export default function RootLayout({
         {children}
         <Analytics />
         <SpeedInsights />
-        <Script
-          src="https://cdn.plugwidgets.com/widget.js"
-          data-token="90b2902b-9829-4147-bbc9-903a57613de0"
-          async
-        />
       </body>
     </html>
   );
