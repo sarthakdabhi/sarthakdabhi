@@ -57,8 +57,8 @@ export function Contact() {
                 <ArrowUpRight className="h-5 w-5 opacity-70" />
               </a>
               <p className="mt-4 text-fg-muted max-w-md">
-                I usually reply within a day or two. Mention what you're
-                working on and what you're hoping for.
+                I usually reply within a day or two. Mention what you&apos;re
+                working on and what you&apos;re hoping for.
               </p>
               <div className="mt-6">
                 <a
